@@ -16,6 +16,12 @@ class ReposController {
       name,
     });
   }
+
+  async index(req, res) {
+    const repos = await Repos.findAll({});
+
+    return res.json(repos);
+  }
 }
 
 export default new ReposController();
